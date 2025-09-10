@@ -52,7 +52,7 @@ public class StorageService {
         Product bread = new SimpleProduct(UUID.randomUUID(), "Хлеб", 50);
         Product cheese = new SimpleProduct(UUID.randomUUID(), "Сыр", 200);
         Product chocolate = new DiscountedProduct(UUID.randomUUID(), "Шоколад", 150, 20);
-        Product soda = new FixPriceProduct(UUID.randomUUID(), "Газировка", 99);
+        Product soda = new FixPriceProduct(UUID.randomUUID(), "Газировка");
 
         productStorage.put(apple.getId(), apple);
         productStorage.put(banana.getId(), banana);
@@ -62,4 +62,5 @@ public class StorageService {
         productStorage.put(chocolate.getId(), chocolate);
         productStorage.put(soda.getId(), soda);
     }
+
 }

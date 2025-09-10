@@ -1,15 +1,24 @@
 package org.skypro.skyshop.model.search;
 
 public class SearchResult {
-
     private final String id;
     private final String name;
     private final String contentType;
 
-    public SearchResult(String id, String name, String contentType) {
+
+    private SearchResult(String id, String name, String contentType) {
         this.id = id;
         this.name = name;
         this.contentType = contentType;
+    }
+
+
+    public static SearchResult fromSearchable(Searchable searchable) {
+        return new SearchResult(
+                searchable.getId().toString(),
+                searchable.getSearchTerm(),
+                searchable.getContentType()
+        );
     }
 
     public String getId() {
@@ -22,14 +31,5 @@ public class SearchResult {
 
     public String getContentType() {
         return contentType;
-    }
-
-    // Статический метод для создания SearchResult из Searchable
-    public static SearchResult fromSearchable(Searchable s) {
-        return new SearchResult(
-                s.getId().toString(),
-                s.getSearchTerm(),
-                s.getContentType()
-        );
     }
 }
