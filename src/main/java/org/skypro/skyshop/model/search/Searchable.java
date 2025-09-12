@@ -4,6 +4,10 @@ import java.util.UUID;
 
 public interface Searchable {
     UUID getId();
-    String getSearchTerm();
+    String getName();
     String getContentType();
+
+    default String getSearchText() {
+        return getName();
+    }
 }

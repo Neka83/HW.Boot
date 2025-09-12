@@ -4,19 +4,9 @@ import java.util.UUID;
 
 public class FixPriceProduct extends Product {
 
-    private static final int FIX_PRICE = 99; // единая цена для всех товаров этого класса
+    private static final int FIX_PRICE = 100;
 
     public FixPriceProduct(UUID id, String name) {
-        super(id, name);
-    }
-
-    @Override
-    public int getPrice() {
-        return FIX_PRICE;
-    }
-
-    @Override
-    public boolean isSpecial() {
-        return true;
+        super(id, name, FIX_PRICE);
     }
 }
